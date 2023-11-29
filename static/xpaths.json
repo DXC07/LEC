@@ -1,0 +1,21 @@
+{
+    "usuario_red": "//input[@name=\"loginfmt\"]",
+    "contraseña_red": "//input[@name=\"passwd\"]",
+    "entrar_btn" : "//button[@id=\"btnMovimientosManuales\"]",
+    "radicar_mvto_btn": "//a[@id=\"linkOptionRadicarMovimientoManual\"]",
+    "adjuntar_archivo": "//input[@id=\"input-InputRadicarMovimientos\"]",
+    "carga_exitosa": "//div[@class=\"bc-uploaded-file bc-uploaded-file-success\"]",
+    "comentarios": "//textarea",
+    "continuar_btn": "//button[text()=\" Continuar \"]",
+    "numero_radicado": "//p[text()=\"Número de radicado: \"]/span",
+    "total_registros": "//p[(@class=\"space-text-card bc-fw-bold\") and (text()=\"Total registros: \")]/span",
+    "total_monto": "//p[(@class=\"space-text-card bc-fw-bold bc-d-inline\") and (text()=\"Total monto en movimientos: \")]/span",
+    "seleccionar_aprobador": "//input[@class=\"bc-input bc-pe-4\"]",
+    "lista_aprobadores": "//ul[@class=\"bc-input-select-content-active\"]/li/span",
+    "finalizar_btn": "//button[text()=\" Finalizar \"]",
+    "consultar_solicitudes": "//a[@id=\"linkOptionConsultarMovimientoManual\"]",
+    "radicado_solicitud_textbox": "//input[@id=\"radicado\"]",
+    "buscar_solicitud": "//i[(@class=\"bc-icon\") and (text()=\"search\")]",
+    "estado_solicitud": "//div[(@class=\"tag-status tag-status__5\")]/p",
+    "descargar_solicitud": "//a[starts-with(@id, \"btnDownloadConsulta\")]"
+}

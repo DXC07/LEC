@@ -1,0 +1,7 @@
+select 
+    SDTIPOCTA, 
+    SDCUENTA,
+    SDESTADO, 
+    (SDSDODSP - SDRETACT - SDVLRCC - SDVLREMB) AS "Saldo TR"
+from SCILIBRAMD.SCIFFSALDO
+where SDCUENTA in (cuentas)

@@ -1,0 +1,7 @@
+1. Validar acceso archivos, realizar query rechazos, leer archivo transacciones areas,hacer clasificación inicial, guardar consolidado
+2. Ejecutar query conciliacion, actualizar saldos cuenta en consolidado
+3. Leer consolidado rechazos, filtrar por trx a aplicar lectura, aplicar reglas para trx de embargos, cod dev T, cod trx rechzao = 0, generar planilla lectura,Leer archivo aprobadores lecturas, radicar en portal, esperar respuesta, leer respuesta, actualizar consolidado
+4. leer consolidado rechazos, buscar hora trx en itc, generar archivo estructura embargos, guardar archivo en onedrive
+5. Leer consolidado, aplicar reglas clasificación, actualizar consolidado
+6. Leer consolidado, leer archivo trn agiles, generar comprobante generico, generar comprobante bank vision
+7. Leer consolidado, Guardar informe en OneDrive, enviar notificacion correo

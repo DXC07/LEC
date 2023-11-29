@@ -1,0 +1,16 @@
+{
+    "rutas": {
+        "log_ejecuciones": "out/log",
+        "carpeta_rechazos": "//10.8.45.116/sox/VP_SERV_CLI/DIR_SERV_CLIE_Y_PROD/GCIA_SERV_CAPTAC/SECC_SER_FIN_CAP/Rechazos de Depósitos/Proceso Rechazos/RECHAZOS 210515020",
+        "onedrive": "C:/Users/sorozco/Grupo Bancolombia/Lady Johanna Munoz Carrillo - Rechazos de Depositos"
+    },
+    "transacciones_areas": ["VALIDAR", "PAGOS", "RECAUDOS", "FINANCIACION", "MEDIOS DE PAGO", "CANJE", "OPERACION INMOBILIARIA", "COMERCIO INTERNACIONAL", "CONCILIACION SUFI"],
+    "url_lecturas": "https://modernizar-eucs.apps.bancolombia.com/",
+    "respuestas_servicio_lectura": {
+        "exitoso": "EXITOSO",
+        "error": "ERROR"
+    },
+    "estados_cancelatorios_bloqueo": ["C", "V", "R", "K", "O", "F", "Q", "E", "P", "Z"],
+    "estados_vigentes": ["A", "L", "M", "N", "T"],
+    "usuarios_notificacion_informe": ["ladmunoz"]
+}

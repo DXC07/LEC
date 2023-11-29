@@ -1,0 +1,103 @@
+{
+    "nombre_euc": "Rechazos Depósitos",
+    "nombre_proceso": "Rechazos Depósitos",
+    "nombre_seccion": "Sección Servicios Depósitos",
+    "botones": [
+        "1. Generar y\nclasificar\nrechazos",
+        "2. Conciliar\n21051020",
+        "3. Radicar lectura\nen tiempo real",
+        "4. Rechazos\nembargos",
+        "5. Clasificar y\ncontabilizar\nrechazos",
+        "6. Generar\ncomprobantes\ncontables",
+        "7. Generar\ny publicar\ninforme"
+    ],
+    "drivers_odbc": {
+        "access": "Microsoft Access Driver (*.mdb, *.accdb)",
+        "AS400": "iSeries Access ODBC Driver"
+    },
+    "objetos_AS400": {
+        "VISIONR.DTRCD": "NACIONAL",
+        "SCILIBRAMD.SCIFFSALDO": "NACIONAL",
+        "VISIONR.DBAL": "NACIONAL",
+        "VISIONR.CXREF": "NACIONAL",
+        "VISIONR.CNAME": "NACIONAL",
+        "VISIONR.GIDBL": "NACIONAL"
+    },
+    "consolidado_rechazos": {
+        "plantilla": "Estructura consolidado rechazos plantilla.xlsx",
+        "nombre": "Consolidado rechazos depósitos_AAAAMMDD.xlsx",
+        "nombre_carpeta": "RECHAZOS",
+        "hoja_rechazos": "Rechazos",
+        "hoja_canje": "TRN canje",
+        "hoja_conciliacion": "Conciliacion 210515020"
+    },
+    "lectura_manual": {
+        "plantilla": "Radicacion de movimientos plantilla.xlsx",
+        "nombre": "Aplicacion rechazos depositos_AAAAMMDD_#.xlsx",
+        "nombre_carpeta": "LECTURA TIEMPO REAL",
+        "hoja_lectura": "Formato Mvto Manual",
+        "columnas": {
+            "Tipo de Cuenta": "Código aplicación",
+            "Número de cuenta": "Número cuenta",
+            "Código de la transacción": "Código TRN rechazo",
+            "Fecha efectiva (AAAAMMDD)": "Fecha efectiva (AAAAMMDD)",
+            "Valor de la transacción": "Monto",
+            "Número de cheque": "Número de cheque",
+            "Naturaleza\nC: Crédito\nD: Débito": "Código DB o CR",
+            "Observaciones": "Observaciones",
+            "Nombre de la transacción": "Nombre de la transacción",
+            "Detalle o información adicional (F0210)": "llave",
+            "Referencia # 1 de la transacción": "Número identificación",
+            "Referencia # 2 de la transacción": "Referencia # 2 de la transacción",
+            "Referencia # 3 de la transacción": "Referencia # 3 de la transacción",
+            "Sucursal de la transacción": "Sucursal libros"
+        },
+        "asunto_mail": "Tu solicitud #ID acaba de ser gestionada",
+        "carpeta_respuesta": "RPTA LECTURA TIEMPO REAL"
+    },
+    "embargos": {
+        "nombre": "Rechazos cuentas embargadas AAAAMMDD.xlsx",
+        "nombre_carpeta": "EMBARGOS",
+        "columnas": {
+            "Código de aplicación": "Código aplicación",
+            "Fecha efectiva": "Fecha efectiva",
+            "Número de cuenta": "Número cuenta",
+            "Valor rechazo": "Monto",
+            "Hora transacción": "Hora TRN",
+            "NIT cliente": "Número identificación",
+            "Nombre cliente": "Nombre",
+            "llave": "llave",
+            "¿Se autoriza?": "¿Se autoriza?",
+            "Código embargo": "Código embargo",
+            "Observación": "Observación"
+        }
+    },
+    "comprobantes_contables": {
+        "nombre_gn": "COMPROBANTE_GN_AAAAMMDD.xlsx",
+        "nombre_bv": "COMPROBANTE_BV_AAAAMMDD.xlsx",
+        "nombre_carpeta": "COMPROBANTES CONTABLES",
+        "trns_agiles": "TRN ÁGILES.xlsx"
+    },
+    "informe": {
+        "nombre": "Informe rechazos depósitos_AAAAMM.xlsx",
+        "nombre_konecta": "Informe rechazos depósitos Konecta_AAAAMM.xlsx",
+        "codigos_devolucion": {
+            "1": "Cuenta no existe",
+            "A": "Operación para cuenta Embargada, Inactiva, Bloqueo N-T (Especial - Temporal)",
+            "B": "Cuenta Pensionado",
+            "C": "Operación cuenta cancelada",
+            "E": "Cuenta no permite actividad por embargo",
+            "O": "Operación para cuenta sin fondos",
+            "S": "Operación para cheque contraordenado",
+            "T": "Operación con fecha no valida"
+        }
+    },
+    "archivo_mails_enviados": "mails_enviados.txt"
+}
+
+
+
+
+
+
+

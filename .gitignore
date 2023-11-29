@@ -1,0 +1,11 @@
+venv
+prueba.py
+out
+cent_prueba.xlsx
+__pycache__
+build
+dist
+procesamiento.json
+prueba_lectura.py
+prueba_comp.py
+temp
