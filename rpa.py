@@ -17,6 +17,8 @@ from embargos import Embargos
 from classification import Classification
 from comprobantes import Comprobantes
 from report import Report
+from getpass import getpass
+from cryptography.fernet import Fernet
 
 # Cargar imágenes y hacer resize
 def load_image(path, resize = None):
@@ -47,6 +49,27 @@ class RPA(Functions):
 
         if not os.path.exists('./temp'):
             os.makedirs('./temp')
+        
+        self.app_authentication()
+    
+    def app_authentication(self):
+        """Valida que la contraseña para ingresar a la aplicación sea correcta"""
+        log_pwd = getpass("Ingrese contraseña EUC: ")
+
+        try:
+            pwd = "gAAAAABlpvQcKRUO0rjRrrfYQAwUb-AuniAdsLwhdSr9fo9czsUNImDR7RtXxe0nxjSZP2NuwrgkfcwOjUsAPai4Sq2gcAT4BQ=="
+            key = open("mykey.key", mode = 'r', encoding = 'utf8').read()
+            f = Fernet(key)
+            pwd = f.decrypt(pwd).decode('utf-8')
+        except:
+            raise Exception("No se encontró archivo mykey.key o este no corresponde")
+        
+        if log_pwd == pwd:
+            self.logger.info("Ingreso aplicación exitoso")
+        else:
+            raise Exception("Autenticación fallida: contraseña incorrecta")
+        
+        return None
     
     def _print_sum(self, _list):
         """Imprime un resumen con el las estadísticas de las tareas en formato de tabla"""

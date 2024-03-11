@@ -22,7 +22,7 @@ class Report(Functions):
         df = pd.DataFrame()
 
         # Áreas a tener en cuenta
-        areas = ['PAGOS', 'RECAUDOS', 'MEDIOS DE PAGO', 'FINANCIACION', 'OPERACION INMOBILIARIA', 'COMERCIO INTERNACIONAL', 'CONCILIACION SUFI']
+        areas = self.config["areas_informe"]
 
         # Recorrer cada área
         for area in areas:
@@ -96,7 +96,7 @@ class Report(Functions):
         df_report['Fecha proceso de rechazos'] = datetime.now().date()
         
         # Definir áreas
-        areas = ['PAGOS', 'MEDIOS DE PAGO', 'RECAUDOS', 'FINANCIACION', 'OPERACION INMOBILIARIA', 'COMERCIO INTERNACIONAL', 'CONCILIACION SUFI']
+        areas = self.config["areas_informe"]
         
         # Crear función para la columna resultado proceso
         def func(row):
@@ -202,7 +202,8 @@ class Report(Functions):
             hbody = f.read()
         
         # Cargar usuarios
-        to = ';'.join(self.config['usuarios_notificacion_informe'])
+        users = [user + "@bancolombia.com.co" for user in self.config["usuarios_notificacion_informe"]]
+        to = ';'.join(users)
         self.logger.debug('Se envió notificación a ' + to)
 
         self.send_mail(outlook, to, 'Informe rechazos de depósitos', False, True, hbody = hbody)

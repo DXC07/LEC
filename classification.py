@@ -49,7 +49,7 @@ class Classification(Functions):
         df = pd.DataFrame()
 
         # Áreas a tener en cuenta
-        areas = ['PAGOS', 'RECAUDOS', 'MEDIOS DE PAGO', 'FINANCIACION', 'OPERACION INMOBILIARIA', 'COMERCIO INTERNACIONAL', 'CONCILIACION SUFI']
+        areas = self.config["areas_informe"]
 
         # Recorrer cada área
         for area in areas:
@@ -74,8 +74,8 @@ class Classification(Functions):
         df = pd.read_excel(self.consolidation_file, sheet_name = self.settings['consolidado_rechazos']['hoja_rechazos'])
 
         # Definir áreas ################### validar si faltan áreas
-        areas = ['PAGOS', 'MEDIOS DE PAGO', 'RECAUDOS', 'CANJE', 'FINANCIACION']
-        new_areas = ['OPERACION INMOBILIARIA', 'COMERCIO INTERNACIONAL', 'CONCILIACION SUFI']
+        areas = self.config["areas_rechazos"]
+        new_areas = self.config["areas_rechazos_o"]
 
         # Hacer merge para saber si las trx corresponden a nuevas áreas
         df = pd.merge(df, self.df_areas, how = 'left', on = 'Concatenar', validate = 'm:1')

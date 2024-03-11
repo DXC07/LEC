@@ -106,7 +106,7 @@ class Consolidation(Functions):
         df = df.reset_index(drop = True)
 
         # Crear columna llave
-        df['llave'] = df['Número identificación'].str.replace('^0+', '', regex = True) + '_' + pd.Series(df.index.astype(str))
+        df['llave'] = df['Número identificación'].str.replace('^0+', '', regex = True) + 'r' + pd.Series(df.index.astype(str))
 
         self.rej_query = df
             
