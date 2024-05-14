@@ -64,8 +64,8 @@ class Comprobantes(Functions):
         """Genera y guarda el comprobante contable genérico"""
 
         # Definir rechazos que se van a incluir en el comprobante contable de acuerdo a la clasificación y a las transacciones
-        classification = ['PAGOS', 'RECAUDOS', 'CXC', 'CXP']
-        trns = ['S9014', 'S9015', 'D9193', 'D9194']
+        classification = self.config["areas_comprobantes_genericos"]
+        trns = self.config["trx_comprobantes_genericos"]
 
         # Filtrar consolidado para generar comprobante contable genérico
         df_gn = self.df_cons[(self.df_cons['Clasificación'].isin(classification)) | (self.df_cons['Concatenar'].isin(trns))].reset_index(drop = True)
@@ -154,11 +154,11 @@ class Comprobantes(Functions):
         return None
 
     def gen_comp_bv_file(self):
-        """Genera y guarda el comprobante contable genérico"""
+        """Genera y guarda el comprobante contable bank vision"""
         # Definir rechazos que se van a incluir en el comprobante contable de acuerdo a la clasificación, las transacciones la cuenta contable
-        classification = ['MEDIOS DE PAGO', 'FINANCIACION', 'TRN PARA CONTABILIZAR', 'LECTURA BATCH', 'EMBARGOS LECTURA TIEMPO REAL']
+        classification = self.config["areas_comprobantes_bv"]
 
-        # Filtrar consolidado para generar comprobante contable genérico
+        # Filtrar consolidado para generar comprobante contable bank vision
         df_bv = self.df_cons[((self.df_cons['Clasificación'].isin(classification)) | ((self.df_cons['Código TRN rechazo'].astype(int) == 0)) & (self.df_cons['Clasificación'] == 'LECTURA TIEMPO REAL')) & (self.df_cons['Estado rechazo'] != 'NO APLICADO')]
 
         if df_bv.shape[0] > 0:
@@ -168,10 +168,12 @@ class Comprobantes(Functions):
                     return row['Concatenar']
                 elif row['Clasificación'] in ['MEDIOS DE PAGO', 'FINANCIACION']:
                     return str(int(row['CTA CONTABLE']))
-                elif int(row['Código TRN rechazo']) == 0 and row['Concatenar'] not in self.df_trns_agiles_bv['CLASIFICACIÓN O TRN VALIDAR'].to_list():
+                elif int(row['Código TRN rechazo']) == 0 and row['Concatenar'] not in self.df_trns_agiles_bv['CLASIFICACIÓN O TRN VALIDAR'].to_list() and row["Clasificación"] == "LECTURA TIEMPO REAL":
                     return 'SIN TRN RECHAZO'
                 elif row['Clasificación'] in ['LECTURA BATCH', 'EMBARGOS LECTURA TIEMPO REAL']:
                     return row['Clasificación']
+                else:
+                    return row["Clasificación"]
 
             df_bv['llave_trns_agiles'] = df_bv.apply(func, axis = 1)
 

@@ -4,7 +4,7 @@
         "carpeta_rechazos": "//10.8.45.116/sox/VP_SERV_CLI/DIR_SERV_CLIE_Y_PROD/GCIA_SERV_CAPTAC/SECC_SER_FIN_CAP/Rechazos de Depósitos/Proceso Rechazos/RECHAZOS 210515020",
         "onedrive": "C:/Users/sorozco/Grupo Bancolombia/Lady Johanna Munoz Carrillo - Rechazos de Depositos"
     },
-    "transacciones_areas": ["VALIDAR", "PAGOS", "RECAUDOS", "FINANCIACION", "MEDIOS DE PAGO", "CANJE", "OPERACION INMOBILIARIA", "COMERCIO INTERNACIONAL", "CONCILIACION SUFI", "CAJEROS"],
+    "transacciones_areas": ["VALIDAR", "PAGOS", "RECAUDOS", "FINANCIACION", "MEDIOS DE PAGO", "CANJE", "OPERACION INMOBILIARIA", "COMERCIO INTERNACIONAL", "CONCILIACION SUFI", "CAJEROS", "SUCURSAL", "CORRESPONSAL", "EFECTIVO", "OPERACION DIGITAL", "CONTACT CENTER Y BPO"],
     "url_lecturas": "https://modernizar-eucs.apps.bancolombia.com/",
     "respuestas_servicio_lectura": {
         "exitoso": "EXITOSO",
@@ -13,7 +13,10 @@
     "estados_cancelatorios_bloqueo": ["C", "V", "R", "K", "O", "F", "Q", "E", "P", "Z"],
     "estados_vigentes": ["A", "L", "M", "N", "T"],
     "usuarios_notificacion_informe": ["ladmunoz", "xtamayo", "aaaceved", "dghenao", "ebarrer", "anyperez", "modmejia", "jugirald", "aadarve", "alequint", "kjpadill", "farenas", "sebmoral", "jaramos", "lfayala", "afhernan", "merami", "baospina", "judymari", "yapinzon", "sasanta", "luferodr", "cpalenci", "lgaviria", "vabustam", "leaperez", "JLIEVANO", "yummarin", "SAMAREST", "julianza", "MARLESYA", "lmmarin", "isherrer", "masanres", "mahiguit", "mholguin", "cnavarro", "eossa", "masanres", "mahiguit"],
-    "areas_informe": ["PAGOS", "MEDIOS DE PAGO", "RECAUDOS", "FINANCIACION", "OPERACION INMOBILIARIA", "COMERCIO INTERNACIONAL", "CONCILIACION SUFI", "CAJEROS"],
+    "areas_informe": ["PAGOS", "MEDIOS DE PAGO", "RECAUDOS", "FINANCIACION", "OPERACION INMOBILIARIA", "COMERCIO INTERNACIONAL", "CONCILIACION SUFI", "CAJEROS", "SUCURSAL", "CORRESPONSAL", "EFECTIVO", "OPERACION DIGITAL", "CONTACT CENTER Y BPO"],
     "areas_rechazos": ["PAGOS", "MEDIOS DE PAGO", "RECAUDOS", "CANJE", "FINANCIACION"],
-    "areas_rechazos_o": ["OPERACION INMOBILIARIA", "COMERCIO INTERNACIONAL", "CONCILIACION SUFI", "CAJEROS"]
+    "areas_rechazos_o": ["OPERACION INMOBILIARIA", "COMERCIO INTERNACIONAL", "CONCILIACION SUFI", "CAJEROS", "SUCURSAL", "CORRESPONSAL", "EFECTIVO", "OPERACION DIGITAL", "CONTACT CENTER Y BPO"],
+    "areas_comprobantes_genericos": ["PAGOS", "RECAUDOS", "CXC", "CXP"],
+    "trx_comprobantes_genericos": ["S9014", "S9015", "D9193", "D9194"],
+    "areas_comprobantes_bv": ["MEDIOS DE PAGO", "FINANCIACION", "TRN PARA CONTABILIZAR", "LECTURA BATCH", "EMBARGOS LECTURA TIEMPO REAL", "CAJEROS", "SUCURSAL", "EFECTIVO", "CORRESPONSAL", "OPERACION DIGITAL", "CONTACT CENTER Y BPO"]
 }
